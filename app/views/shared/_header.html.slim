@@ -1,0 +1,15 @@
+.bg-white
+  .container.mb-6.my-0.mx-auto
+    .mx-12.py-10
+      .flex.justify-between
+        .h-10.w-44= render partial: "svg/oam_logo"
+        .flex.items-center
+          = link_to "Audit", "#", class: "px-6 py-3 text-grey-600"
+          = link_to "Learn", "#", class: "px-6 py-3 text-grey-600"
+          = link_to "Documents", "#", class: "px-6 py-3 text-grey-600"
+          = link_to "Integrations", "#", class: "px-6 py-3 text-grey-600"
+
+        = link_to "#", class: "flex items-center" do
+          .mr-4 User Name
+          .max-h-10.max-w-12.max-h-12= image_tag "http://placekitten.com/200/200", class: "w-full rounded-full"
+          / caret here

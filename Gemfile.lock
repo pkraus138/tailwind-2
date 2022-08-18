@@ -127,6 +127,8 @@ GEM
       digest
       net-protocol
       timeout
+    nice_partials (0.1.9)
+      actionview (>= 4.2.6)
     nio4r (2.5.8)
     nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
@@ -231,6 +233,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  nice_partials
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)

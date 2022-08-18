@@ -6,6 +6,7 @@ ruby "3.1.2"
 gem "bootsnap", require: false
 gem "importmap-rails"
 gem "jbuilder"
+gem "nice_partials"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 gem "redis", "~> 4.0"

@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Tailwind 2: Electric Boogaloo
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+
+    = javascript_importmap_tags
+
+  body.bg-body.flex.flex-col.justify-between
+    .mb-6
+      = render partial: "shared/header"
+      main.container.my-0.mx-auto
+        = yield
+    = render partial: "shared/footer"
