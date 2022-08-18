@@ -1,25 +1,8 @@
-= render "templates/page/with_sidebar" do |page_template|
-  = page_template.content_for :sidebar do
-    h2.text-2xl.mb-5 Project Name
-    = link_to "#",
-      class: "flex justify-between text-grey-500 leading-relaxed mb-6" do
-        div Overview
-        .text-black.font-bold= "1%"
-    - @categories_by_topic.each do |topic|
-      .mb-6
-        = link_to topic[:name], "#", class: "block font-bold text-grey-600"
-        .mt-2.block.mb-4
-          .w-4.border-b-2.border-gray-400
-        - topic[:categories].each do |category|
-          - if category[:active]
-            = link_to "#",
-              class: "flex justify-between p-2 text-grey-500 bg-power-blue-200 rounded-lg font-bold leading-relaxed" do
-                .text-power-blue-500= category[:name]
-                .text-black= category[:completed]
-          - else
-            = link_to category[:name], "#", class: "block p-2 text-grey-500"
+= render "page_templates/with_sidebar" do |page_template|
+  - page_template.content_for :sidebar do
+    = render partial: "components/category_sidebar", locals: {categories_by_topic: @categories_by_topic }
 
-  - page_template.content_for :body_top do
+  - page_template.content_for :top_section do
     h1.text-4xl Overview
     p.my-3 Please provide required information to define the scope of the engagement before the audit begins.
     

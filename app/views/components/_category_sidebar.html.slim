@@ -1,0 +1,18 @@
+h2.text-2xl.mb-5 Project Name
+= link_to "#",
+  class: "flex justify-between text-grey-500 leading-relaxed mb-6" do
+    div Overview
+    .text-black.font-bold= "1%"
+- categories_by_topic.each do |topic|
+  .mb-6
+    = link_to topic[:name], "#", class: "block font-bold text-grey-600"
+    .mt-2.block.mb-4
+      .w-4.border-b-2.border-gray-400
+    - topic[:categories].each do |category|
+      - if category[:active]
+        = link_to "#",
+          class: "flex justify-between p-2 text-grey-500 bg-power-blue-200 rounded-lg font-bold leading-relaxed" do
+            .text-power-blue-500= category[:name]
+            .text-black= category[:completed]
+      - else
+        = link_to category[:name], "#", class: "block p-2 text-grey-500"

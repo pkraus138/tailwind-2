@@ -5,8 +5,9 @@
         = partial.yield :sidebar
     .col-span-9
       .grid.grid-cols-1.gap-4
-        = render layout: "components/card" do
-          = partial.yield :body_top
+        - if partial.content_for? :top_section
+          = render layout: "components/card" do
+            = partial.yield :top_section
 
         = render layout: "components/card" do
           = partial.yield :body
